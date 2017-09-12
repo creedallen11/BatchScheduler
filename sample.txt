@@ -1,0 +1,46 @@
+Creeds-MacBook-Pro:lab1 Creed$ make
+gcc -Wall -Wpedantic -Werror part1.c -o part1
+gcc -Wall -Wpedantic -Werror part2.c -o part2
+gcc -Wall -Wpedantic -Werror part3.c -o part3
+
+Creeds-MacBook-Pro:lab1 Creed$ ./part1
+Grandchild process with process ID 1806 has completed.
+Child process with process ID 1805 has completed.
+Parent process with process ID 1804 has finished.
+
+Creeds-MacBook-Pro:lab1 Creed$ ./part2
+Please enter a process ID to KILL!
+-:1500
+You entered 1500!
+Process 1500 does not exist.
+
+Creeds-MacBook-Pro:lab1 Creed$ ./part3
+Batch Scheduling Shell. Enter 'quit' to exit. For run examples see README.txt file.
+batch-shell> ./part1
+Child process 1811 is executing ./part1.
+Grandchild process with process ID 1813 has completed.
+Child process with process ID 1812 has completed.
+Parent process with process ID 1811 has finished.
+Child completed on ./part1...
+batch-shell> ./part1 ./part2 ls
+Child process 1814 is executing ./part1.
+Grandchild process with process ID 1816 has completed.
+Child process with process ID 1815 has completed.
+Parent process with process ID 1814 has finished.
+Child completed on ./part1...
+Child process 1817 is executing ./part2.
+Please enter a process ID to KILL!
+-:1
+You entered 1!
+You do not have permission to kill process 1.
+Child completed on ./part2...
+Child process 1818 is executing ls.
+Makefile	part1.c		part2.c		part3.c
+part1		part2		part3
+Child completed on ls...
+batch-shell> quit
+
+Creeds-MacBook-Pro:lab1 Creed$ make clean
+rm -f part1
+rm -f part2
+rm -f part3
